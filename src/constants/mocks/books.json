@@ -1,0 +1,23 @@
+[
+  {
+    "id": "618bd90e3d81b2be9117328d",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "cover": "http://www.operamundi.com.br/media/images/capadracula.jpeg",
+    "url": "www.gutenberg.org/cache/epub/345/pg345-images.epub?session_id=a3eac8fda64517d100c43e661ce4df15afc069bd"
+  },
+  {
+    "id": "618bda9bc2a47ff37ad1f9c4",
+    "title": "Moby Dick; Or, the Whale",
+    "author": "Herman Melville",
+    "cover": "https://static01.nyt.com/images/2011/10/22/books/review/moby-dick-slideshow-slide-V7YU/moby-dick-slideshow-slide-V7YU-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+    "url": "https://s3.amazonaws.com/moby-dick/moby-dick.epub"
+  },
+  {
+    "id": "618bdaa13965503ef53a2ba3",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoyevsky",
+    "cover": "https://images-na.ssl-images-amazon.com/images/I/81b6e-dc41L.jpg",
+    "url": "www.gutenberg.org/ebooks/2554.epub.noimages?session_id=a3eac8fda64517d100c43e661ce4df15afc069bd"
+  }
+]

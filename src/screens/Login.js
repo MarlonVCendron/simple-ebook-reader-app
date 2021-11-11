@@ -9,8 +9,7 @@ import {
 } from 'react-native-paper';
 
 import styles from '../styles';
-
-const image = { uri: "https://reactjs.org/logo-og.png" };
+import { background } from '../img';
 
 const Login = ({ navigation }) => {
   const [data, setData] = useState({});
@@ -23,17 +22,16 @@ const Login = ({ navigation }) => {
   };
 
   const login = () => {
-    navigation.navigate('Teste', data);
+    navigation.navigate('Library', { login: data.login });
   };
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-
+      <ImageBackground source={background} resizeMode="cover" style={styles.image}>
         <TextInput
-          label="Email"
-          onChangeText={onChangeInput("email")}
-          value={data.email}
+          label="Login"
+          onChangeText={onChangeInput("login")}
+          value={data.login}
           style={styles.default}
         />
 
@@ -53,7 +51,6 @@ const Login = ({ navigation }) => {
           Login
         </Button>
       </ImageBackground>
-
     </View>
   );
 };

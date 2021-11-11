@@ -2,19 +2,23 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// import Login from '../src/screens/Login';
-import Teste from '../screens/Teste';
+import { Library, Login, Reader } from '../screens';
 
 const Stack = createNativeStackNavigator();
 
+const title = ({ route }) => ({
+  title: route?.params?.title,
+});
+
 const Navigator = () => {
   return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Teste">
-          {/* <Stack.Screen name="Login" component={Login} options={{headerShown: false}} /> */}
-          <Stack.Screen name="Teste" component={Teste} initialParams={{ url: "/storage/emulated/0/Download/Neuromancer (Trilogia do Sprawl) (Portuguese Edition) by Gibson William, Fernandes Fábio (z-lib.org).epub" }}/>
-        </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Library" component={Library} options={{ headerLeft: () => null }} />
+        <Stack.Screen name="Reader" component={Reader} options={title} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

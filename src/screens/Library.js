@@ -17,7 +17,7 @@ const Library = ({ navigation, route }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerMargin}>
       <FlatList
         columnWrapperStyle={{ justifyContent: 'space-between' }}
         data={books}

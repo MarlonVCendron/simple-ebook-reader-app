@@ -13,7 +13,7 @@ const title = ({ route }) => ({
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Library">
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Library" component={Library} options={{ headerLeft: () => null }} />
         <Stack.Screen name="Reader" component={Reader} options={title} />

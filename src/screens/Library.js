@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux'
 
 import styles from '../styles';
-import { getBooks } from '../services/library.service';
 import BookItem from '../components/BookItem';
+import { addBooks } from '../store/books/actions'
 
 const Library = ({ navigation, route }) => {
-  const [books, setBooks] = useState([]);
-  const { login } = route.params;
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.books);
+  const { login } = route?.params || {};
 
   useEffect(() => {
-    const ret = getBooks(login);
-    setBooks(ret);
+    dispatch(addBooks());
 
     navigation.setOptions({ title: `${login || 'Anonymous'}'s Library` })
   }, []);

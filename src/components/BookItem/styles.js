@@ -12,8 +12,8 @@ export default StyleSheet.create({
     // height: 320,
     alignItems: 'center',
     justifyContent: 'center',
-    elevation: 4,
-    backgroundColor: '#2C2C2C',
+    elevation: 2,
+    // backgroundColor: '#2C2C2C',
   },
   title: {
     fontSize: 18,

@@ -21,17 +21,15 @@ const Reader = ({ route }) => {
       const serverUrl = await newServer.start();
 
       // const bookUrl = serverUrl + bookFileUrl.replace('file://', '');
+      const bookUrl = 'https://s3.amazonaws.com/moby-dick/moby-dick.epub';
 
-      const bookUrl = serverUrl + '/Download/moby-dick.epub';
-
-      console.log(bookUrl);
       setUrl(bookUrl);
       setServer(newServer);
     };
 
     asyncUseEffect();
     return () => {
-      state.server && state.server.stop();
+      server && server.stop();
     };
   }, []);
 
@@ -43,6 +41,7 @@ const Reader = ({ route }) => {
   }, [url]);
 
   if (!url) return <Spinner />;
+
   return (
     <WebView
       source={{ uri: 'file:///android_asset/epub.html' }}

@@ -7,9 +7,12 @@ import styles from './styles';
 import { removeExtensionFromFileName } from '../../util/utils';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../store/books/actions'
+import { placeholderBook } from '../../img';
 
 const BookItem = ({ book, navigation }) => {
   const dispatch = useDispatch();
+  const bookName = removeExtensionFromFileName(book.name);
+
 
   const onPress = () => {
     navigation.navigate('Reader', book);
@@ -18,7 +21,7 @@ const BookItem = ({ book, navigation }) => {
   const alertDelete = () => (
     Alert.alert(
       'Delete book',
-      `Do you really wish to delete ${book.name}?`,
+      `Do you really wish to delete ${bookName}?`,
       [
         {
           text: 'Cancel',
@@ -44,10 +47,10 @@ const BookItem = ({ book, navigation }) => {
       <View>
         <Image
           style={styles.cover}
-          source={{ uri: 'https://img.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg?size=626&ext=jpg' }}
+          source={placeholderBook}
           resizeMode='contain'
         />
-        <Text numberOfLines={1} style={styles.title}>{removeExtensionFromFileName(book.name)}</Text>
+        <Text numberOfLines={1} style={styles.title}>{bookName}</Text>
         {/* <Text numberOfLines={1} style={styles.author}>{book.author}</Text> */}
       </View>
     </TouchableOpacity>

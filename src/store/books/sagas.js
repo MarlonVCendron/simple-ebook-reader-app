@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import { getStoragePermission, checkStoragePermissions } from '../../util/permissions';
 import { addBooksSuccess, addBooksFailure } from './actions';
 
-import DocumentPicker, { types } from 'react-native-document-picker'
+import DocumentPicker from 'react-native-document-picker'
 
 export function* addBooks() {
   const granted = yield call(checkStoragePermissions);
@@ -10,7 +10,6 @@ export function* addBooks() {
 
   try {
     const result = yield call(DocumentPicker.pickMultiple, { type: "application/epub+zip" });
-    // const result = yield call(DocumentPicker.pickMultiple);
     yield put(addBooksSuccess(result));
   } catch (e) {
     console.log(e);

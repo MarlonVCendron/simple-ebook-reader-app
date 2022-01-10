@@ -14,6 +14,7 @@ export const getBookURL = async (uri) => {
       return `file://${destPath}`;
     }
   } catch (e) {
+    console.log(e);
     return '';
   }
 };

@@ -19,4 +19,14 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center'
   },
+  emptyMessageStyle: {
+    textAlign: 'center',
+    marginTop: 20,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+  },
 });

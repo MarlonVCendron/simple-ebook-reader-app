@@ -9,19 +9,11 @@ export function* addBooks() {
   if (!granted) yield call(getStoragePermission);
 
   try {
-    // const result = yield call(DocumentPicker.pickMultiple, { type: "application/epub+zip" });
-    const result = yield call(DocumentPicker.pickMultiple);
+    const result = yield call(DocumentPicker.pickMultiple, { type: "application/epub+zip" });
+    // const result = yield call(DocumentPicker.pickMultiple);
     yield put(addBooksSuccess(result));
   } catch (e) {
     console.log(e);
     yield put(addBooksFailure());
   }
-};
-
-export const addMetadata = (data, index) => {
-  return { type: 'add_metadata', payload: { data, index } };
-};
-
-export const removeBook = (index) => {
-  return { type: 'remove_book', payload: index };
 };

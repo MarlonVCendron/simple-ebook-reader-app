@@ -1,16 +1,19 @@
 import * as React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Provider } from 'react-redux';
-import store from './store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store';
 
 import Navigator from './navigation/Navigator';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <PaperProvider>
-        <Navigator />
-      </PaperProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <PaperProvider>
+          <Navigator />
+        </PaperProvider>
+      </PersistGate>
     </Provider>
   );
 }

@@ -10,3 +10,8 @@ export const addBooksSuccess = (books) => ({
 export const addBooksFailure = () => ({
   type: 'add_books:failure',
 });
+
+export const removeBook = (uri) => ({
+  type: 'remove_book',
+  payload: uri,
+});
